@@ -1,7 +1,6 @@
-package com.EzyMedi.notification.MessageConsumer;
+package com.EzyMedi.notification.consumer;
 
 import com.EzyMedi.news.dto.NewsMessage;
-import com.EzyMedi.news.service.NewsService;
 import com.EzyMedi.notification.service.NotificationService;
 import com.EzyMedi.user.data.model.User;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
