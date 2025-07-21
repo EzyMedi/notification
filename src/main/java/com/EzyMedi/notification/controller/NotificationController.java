@@ -16,7 +16,7 @@ public class NotificationController {
     @Autowired
     private NotificationService notificationService;
 
-    @GetMapping
+    @GetMapping("/get")
     List<Notification> getAllNews() {
         return notificationService.getAllNotifications();
     }

@@ -2,7 +2,7 @@ package com.EzyMedi.notification.service;
 
 import com.EzyMedi.notification.model.Notification;
 import com.EzyMedi.notification.repository.NotificationRepository;
-import com.EzyMedi.user.data.model.User;
+import com.EzyMedi.user.data.dto.UserDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,16 +27,15 @@ public class NotificationService {
     @Value("${api.get.all.followers.url}")
     String getFollowersUrl;
 
-    public List<User> getFollowers(UUID doctorId) {
+    public List<UserDTO> getFollowers(UUID doctorId) {
         String url = getFollowersUrl + doctorId;
 
-        ResponseEntity<List<User>> response = restTemplate.exchange(
+        ResponseEntity<List<UserDTO>> response = restTemplate.exchange(
                 url,
                 HttpMethod.GET,
                 null,
-                new ParameterizedTypeReference<List<User>>() {}
+                new ParameterizedTypeReference<List<UserDTO>>() {}
         );
-        log.info("Response: {}", response.getBody());
         return response.getBody();
     }
 

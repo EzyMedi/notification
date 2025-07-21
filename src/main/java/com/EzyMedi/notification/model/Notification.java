@@ -22,6 +22,7 @@ public class Notification {
 
     public Notification(UUID newsId, UUID doctorId, String title) {
         this.newsId = newsId;
+        this.doctorId = doctorId;
         this.title = title;
         this.timestamp = LocalDateTime.now();
     }
