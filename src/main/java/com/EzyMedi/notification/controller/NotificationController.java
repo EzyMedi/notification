@@ -1,6 +1,6 @@
 package com.EzyMedi.notification.controller;
 
-import com.EzyMedi.news.model.News;
+
 import com.EzyMedi.notification.model.Notification;
 import com.EzyMedi.notification.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class NotificationController {
     private NotificationService notificationService;
 
     @GetMapping("/get")
-    List<Notification> getAllNews() {
+    List<Notification> getAllNotifications() {
         return notificationService.getAllNotifications();
     }
 }

@@ -14,19 +14,19 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class NewsMessageConfiguration {
-    @Value("${spring.rabbitmq.exchange.news}")
-    private String newsExchange;
-    @Value("${spring.rabbitmq.queue.news}")
-    private String newsQueue;
+public class BlogMessageConfiguration {
+    @Value("${spring.rabbitmq.exchange.blog}")
+    private String blogExchange;
+    @Value("${spring.rabbitmq.queue.blog}")
+    private String blogQueue;
     @Bean
     public Queue notificationQueue() {
-        return new Queue(newsQueue);
+        return new Queue(blogQueue);
     }
 
     @Bean
     public FanoutExchange fanoutExchange() {
-        return new FanoutExchange(newsExchange);
+        return new FanoutExchange(blogExchange);
     }
 
     @Bean

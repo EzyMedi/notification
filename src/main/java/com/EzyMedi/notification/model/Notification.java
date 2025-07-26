@@ -15,13 +15,13 @@ public class Notification {
     @Id
     @GeneratedValue
     private UUID notificationId;
-    private UUID newsId;
+    private UUID blogId;
     private UUID doctorId;  // e.g., email or username
     private String title;           // Notification title
     private LocalDateTime timestamp;
 
-    public Notification(UUID newsId, UUID doctorId, String title) {
-        this.newsId = newsId;
+    public Notification(UUID blogId, UUID doctorId, String title) {
+        this.blogId = blogId;
         this.doctorId = doctorId;
         this.title = title;
         this.timestamp = LocalDateTime.now();
